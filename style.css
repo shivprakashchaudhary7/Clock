@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: sans-serif;
+    color: white
+}
+body{
+    display: flex;
+    background-color: #212121;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
+}
+
+.clock{
+    background-color: #5e5d5d;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    border: 2px solid;
+    box-shadow: 0px 0px 30px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 30px;
+}
+
+.clock::before{
+    background-color: white;
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px; 
+    border-radius: 50%;
+    z-index: 1;
+}
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+/* #sh{
+    margin: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: start;
+} */
+
+#sh {
+    color: rgb(179, 28, 101);
+    display: inline-block;
+    animation: myAnimation 3s infinite ease-in-out;
+    margin: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: start;
+}
+
+@keyframes myAnimation {
+    0% {
+        transform: translateX(0);
+        color: rgb(179, 28, 101);
+    }
+
+    50% {
+        transform: translateX(100px);
+        color: blue;
+    }
+
+    100% {
+        transform: translateX(0);
+        color: green;
+    }
+}
